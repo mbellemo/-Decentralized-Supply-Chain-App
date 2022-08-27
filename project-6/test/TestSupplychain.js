@@ -114,18 +114,36 @@ contract('SupplyChain', function(accounts) {
         const supplyChain = await SupplyChain.deployed()
         
         // Declare and Initialize a variable for event
-        
+        let eventEmitted = false;
         
         // Watch the emitted event Packed()
-        
+        let event = supplyChain.Packed();
+        await event.watch((err, res) => {
+            eventEmitted = true
+        })
 
         // Mark an item as Packed by calling function packItem()
+        await supplyChain.addFarmer(accounts[1], {from: accounts[0]});
+        await supplyChain.harvestItem(upc, originFarmerID, originFarmName, originFarmInformation, originFarmLatitude, originFarmLongitude, productNotes, {from: accounts[1]});
+        await supplyChain.processItem(upc, {from: accounts[1]});
+        await supplyChain.packItem(upc, {from: accounts[1]});
         
 
         // Retrieve the just now saved item from blockchain by calling function fetchItem()
-        
+        const resultBufferOne = await supplyChain.fetchItemBufferOne.call(upc)
+        const resultBufferTwo = await supplyChain.fetchItemBufferTwo.call(upc)
 
         // Verify the result set
+        assert.equal(resultBufferOne[0], 3, 'Error: Invalid item SKU')
+        assert.equal(resultBufferOne[1], upc, 'Error: Invalid item UPC')
+        assert.equal(resultBufferOne[2], originFarmerID, 'Error: Missing or Invalid ownerID')
+        assert.equal(resultBufferOne[3], originFarmerID, 'Error: Missing or Invalid originFarmerID')
+        assert.equal(resultBufferOne[4], originFarmName, 'Error: Missing or Invalid originFarmName')
+        assert.equal(resultBufferOne[5], originFarmInformation, 'Error: Missing or Invalid originFarmInformation')
+        assert.equal(resultBufferOne[6], originFarmLatitude, 'Error: Missing or Invalid originFarmLatitude')
+        assert.equal(resultBufferOne[7], originFarmLongitude, 'Error: Missing or Invalid originFarmLongitude')
+        assert.equal(resultBufferTwo[5], 2, 'Error: Invalid item State')
+        assert.equal(eventEmitted, true, 'Invalid event emitted')    
         
     })    
 
