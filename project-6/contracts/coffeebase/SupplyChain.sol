@@ -164,7 +164,7 @@ contract SupplyChain is FarmerRole {
         string _originFarmLatitude, 
         string _originFarmLongitude, 
         string _productNotes
-        ) onlyFarmer() public 
+        ) onlyFarmer public
     {
         // Add the new item as part of Harvest
         Item memory item = Item(
