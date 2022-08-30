@@ -232,7 +232,7 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole 
         items[_upc].distributorID = msg.sender;
         items[_upc].itemState = State.Sold;
         // Transfer money to farmer
-        msg.sender.transfer(msg.value);
+        items[_upc].originFarmerID.transfer(items[_upc].productPrice);
         
         // emit the appropriate event
         emit Sold(_upc);
