@@ -12,7 +12,7 @@ The DApp User Interface when running should look like...
 
 ![truffle test](images/ftc_transaction_history.png)
 
-## Write-up
+## Project Write-up
 
 This project helps farmers, retailers, distributors, and consumers handling the supply chain of perishable goods.
 By tracking the origin of the products from the farm to the consumer, it is possible to ensure transparency in the chain for every single actor of the process.
@@ -26,6 +26,9 @@ By tracking the origin of the products from the farm to the consumer, it is poss
 
 ![class diagram](images/uml_class_diagram.png)
 
+## Libraries
+On top of the necessary libraries, dotenv has been used to ensure env variable can be used locally without exposing secrets.
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
@@ -35,7 +38,9 @@ These instructions will get you a copy of the project up and running on your loc
 Please make sure you've already installed ganache-cli, Truffle and enabled MetaMask extension in your browser.
 
 ```
-Give examples (to be clarified)
+Version used
+Truffle v4.1.14 (core: 4.1.14)
+Solidity v0.4.24 (solc-js)
 ```
 
 ### Installing
