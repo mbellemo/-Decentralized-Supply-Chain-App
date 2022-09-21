@@ -12,6 +12,19 @@ The DApp User Interface when running should look like...
 
 ![truffle test](images/ftc_transaction_history.png)
 
+## Write-up
+
+This project helps farmers, retailers, distributors, and consumers handling the supply chain of perishable goods.
+By tracking the origin of the products from the farm to the consumer, it is possible to ensure transparency in the chain for every single actor of the process.
+
+## UML
+![activity diagram](images/uml_activity_diagram.png)
+
+![sequence diagram](images/uml_sequence_diagram.png)
+
+![state diagram](images/uml_state_diagram.png)
+
+![class diagram](images/uml_class_diagram.png)
 
 ## Getting Started
 
