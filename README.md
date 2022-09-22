@@ -29,6 +29,10 @@ By tracking the origin of the products from the farm to the consumer, it is poss
 ## Libraries
 On top of the necessary libraries, dotenv has been used to ensure env variable can be used locally without exposing secrets.
 
+## Contract deployed on Rinkeby
+Contract address: 0x2818479b8d4c6c44682b16a9aeacc50704b2c1a2
+Transaction hash: 0xb91694ed5a78d5688bebb5fd28573418549c825f1b5e86a334cf2c35945059bd
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
